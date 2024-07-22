@@ -1,0 +1,93 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tiny Peoples</title>
+
+<style>
+body {
+	margin: 0;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	background-size: cover;
+	background-image: url('/paper.jpg');
+	background-position: center center;
+}
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#shadows {
+	filter: blur(2px);
+}
+#app {
+	font-family: system-ui, sans-serif;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	pointer-events: none;
+	line-height: 1.4em;
+	font-size: 14px;
+}
+#app p {
+	margin: 0;
+	width: 24ch;
+    margin-bottom: 8px;
+}
+#app a:hover {
+    background: #000;
+    color: #fff;
+}
+#app a,
+#app button {
+	color: inherit;
+	pointer-events: all;
+}
+#app .button {
+	font-family: system-ui, sans-serif;
+	color: rgba(0, 0, 0, .5);
+	display: block;
+	text-decoration: underline;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	margin: auto;
+	padding: 0;
+	font-size: inherit;
+    line-height: inherit;
+}
+#app .button:hover {
+	color: inherit;
+}
+#app .button:hover::before {
+    content: '→ ';
+}
+#app .button:hover::after {
+    content: ' ←';
+}
+</style>
+<canvas id="shadows" style="width:0;height:0"></canvas>
+<canvas id="silhouettes" style="width:0;height:0"></canvas>
+<div id="app">
+	<p>
+		<strong><a href="https://github.com/howardnikhil">Tiny Peoples.</a></strong>
+		a tiny project by
+		<a href="https://hownik.in" target="_blank">Howard Nikhil</a>,
+		built with love and passion in STEM
+		
+	</p>
+	<div class="buttons">
+        <button class="button clickMapButton">click map for tiny humans</button>
+		<button class="button randomizeButton">even more humans!</button>
+		<button class="button clearButton">extinction!</button>
+		<button class="button hideButton">hide this</button>
+	</div>
+</div>
+<script src="/app.js"></script>
+
